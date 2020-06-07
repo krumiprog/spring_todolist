@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+    <div th:replace="fragments :: header"></div>
+
+    <div class="container mt-5 mb-5">
+<!--        <div th:each="todo : ${todos}" class="alert alert-info mt-2">-->
+        <div class="alert alert-info mt-2">
+            <h2 th:text="${todo.title}"></h2>
+            <p th:text="${todo.text}"></p>
+
+            <a th:href="'/todo/' + ${todo.id} + '/edit'" class="btn btn-warning">Edit</a>
+            <a th:href="'/todo/' + ${todo.id} + '/delete'" class="btn btn-danger">Delete</a>
+
+<!--            <form th:action="'/todo/' + ${todo.id} + '/delete'" method="get">-->
+<!--                <button class="btn btn-danger" type="submit">Delete</button>-->
+<!--            </form>-->
+        </div>
+    </div>
+
+</body>
+</html>

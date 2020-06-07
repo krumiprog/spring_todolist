@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments:: head">
+</head>
+<body>
+
+    <div th:replace="fragments :: header"></div>
+
+    <div class="container mt-5 mb-5">
+        <h1 th:text="${title}"></h1>
+<!--        <div th:each="todo : ${todos}">-->
+
+            <form method="post">
+                <input type="text" th:value="${todo.title}" name="title" placeholder="Todo title" class="form-control"><br>
+                <textarea name="text" placeholder="Todo description" class="form-control" th:text="${todo.text}"></textarea><br>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+<!--        </div>-->
+    </div>
+
+</body>
+</html>
